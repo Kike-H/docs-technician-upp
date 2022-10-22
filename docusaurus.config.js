@@ -8,16 +8,16 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'UPP DOCS',
   tagline: 'Módulo del departamento de compras de la UPP',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https:/Kike-H.github.io/docs-technician-upp',
+  baseUrl: '/docs-technician-upp/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Universidad Politecnica de Pénjamo', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Kike-H', // Usually your GitHub org/user name.
+  projectName: 'docs-technician-upp', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
