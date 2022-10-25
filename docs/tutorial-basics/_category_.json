@@ -1,8 +1,8 @@
 {
-  "label": "Tutorial - Basics",
+  "label": "Estructura de proyecto",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "Aquí aprenderás todo acerca de la estructura del proyecto, desde la base de datos, los modelos esquemas, ficheros etc."
   }
 }
