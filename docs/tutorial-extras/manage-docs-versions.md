@@ -2,54 +2,91 @@
 sidebar_position: 1
 ---
 
-# Manage Docs Versions
+# Estructura de pruebas unitarias 
 
-Docusaurus can manage multiple versions of your docs.
+La importancia de las *** pruebas ***
 
-## Create a docs version
+Para este proyecto se decidió hacer las pruebas unitarias para cada ruta usando [`PyTest`](https://docs.pytest.org/en/7.1.x/getting-started.html), este es un tema muy importante, ya que es donde se determina si una ruta funciona como debe, el encargado de hacer estas rutas debe seguir la siguiente estructura:  
 
-Release a version 1.0 of your project:
+## Código
 
-```bash
-npm run docusaurus docs:version 1.0
+```python
+from fastapi.testclient import TestClient
+from src.app import app
+
+clinet = TestClient(app)
+
+
+def test_post():
+    request = clinet.post("/capitulo/", json={
+        "idCapitulo": 0,
+        "status": 0,
+        "numero": 0,
+        "nombre": "string",
+        "tipoGasto": "string",
+        "nombreGasto": "string",
+        "descripcion": "string"
+
+    })
+    assert request.status_code == 201
+    assert request.json() == {
+        "idCapitulo": 1
+    }
+
+
+def test_get():
+    request = clinet.get("/capitulo/")
+    assert request.status_code == 200
+    assert request.json() == {
+        "values": [
+            {
+                "idCapitulo": 1,
+                "status": 0,
+                "numero": 0,
+                "nombre": "string",
+                "tipoGasto": "string",
+                "nombreGasto": "string",
+                "descripcion": "string"
+            }
+        ],
+        "num": 1
+    }
+
+
+def test_put():
+    request = clinet.put("/capitulo/", json={
+        "idCapitulo": 1,
+        "status": 1,
+        "numero": 1,
+        "nombre": "string",
+        "tipoGasto": "string",
+        "nombreGasto": "string",
+        "descripcion": "string"
+    }
+    )
+    assert request.status_code == 200
+    assert request.json() == {
+        "idCapitulo": 1,
+        "status": 1,
+        "numero": 1,
+        "nombre": "string",
+        "tipoGasto": "string",
+        "nombreGasto": "string",
+        "descripcion": "string"
+    }
+
+
+def test_delete():
+    request = clinet.delete("/capitulo/1")
+    assert request.status_code == 204
+
+```
+## Creación
+Como vemos se crea un cliente que pueda ejecutar estas rutas, se crean funciones de prueba para cada ruta en donde se decide que se enviará y como y que se espera como respuesta desde el status code, como respuesta json.
+
+## Ejecución
+Para ejecutar cualquier prueba de forma independiente puedes hacer lo siguiente:
+```bash 
+ pytest -vv ./test/test.py
 ```
 
-The `docs` folder is copied into `versioned_docs/version-1.0` and `versions.json` is created.
-
-Your docs now have 2 versions:
-
-- `1.0` at `http://localhost:3000/docs/` for the version 1.0 docs
-- `current` at `http://localhost:3000/docs/next/` for the **upcoming, unreleased docs**
-
-## Add a Version Dropdown
-
-To navigate seamlessly across versions, add a version dropdown.
-
-Modify the `docusaurus.config.js` file:
-
-```js title="docusaurus.config.js"
-module.exports = {
-  themeConfig: {
-    navbar: {
-      items: [
-        // highlight-start
-        {
-          type: 'docsVersionDropdown',
-        },
-        // highlight-end
-      ],
-    },
-  },
-};
-```
-
-The docs version dropdown appears in your navbar:
-
-![Docs Version Dropdown](./img/docsVersionDropdown.png)
-
-## Update an existing version
-
-It is possible to edit versioned docs in their respective folder:
-
-- `versioned_docs/version-1.0/hello.md` updates `http://localhost:3000/docs/hello`
-- `docs/hello.md` updates `http://localhost:3000/docs/next/hello`
