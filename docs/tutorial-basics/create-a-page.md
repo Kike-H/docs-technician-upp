@@ -7,7 +7,7 @@ sidebar_position: 1
 Estructurando nuestro proyecto (*** Diagram Tree ***)
 
 
-El proyecto en la parte del lado del backend sigue la estructura de la arquitectura *** API Restfu ***, basándonos en las filosofías principales de *** clean code ***, así como de *** DRY *** (Don't repeat yourself)
+El proyecto en la parte del lado del backend sigue la estructura de la arquitectura *** API Restful ***, basándonos en las filosofías principales de *** clean code ***, así como de *** DRY *** (Don't repeat yourself)
 
 Aquí abajo verá un diagrama de árbol de la estructura del proyecto:
 
@@ -45,23 +45,23 @@ Este es el ejecutable creado, para ejecutar, la api, limpiar las tablas y ejecut
 ### Dev
 Este comando ejecuta el servidor en modo de desarrollo en [http://localhost:8000/](http://localhost:8000)
 ```bash
-e./exc.sh dev
+./exc.sh dev
 ```
 
 ### Test
 Este comando ejecuta todos los archivos test, que se encuentra en el directorio de: `./test/`
 ```bash
-e./exc.sh test
+./exc.sh test
 ```
 
 ### Delete
 Este comando limpia las tablas de la base de datos local 
 ```bash
-e./exc.sh delete 
+./exc.sh delete 
 ```
 
 ## Files
-Este directorio es donde se almacenan todos los archivos subidos al backend, tanto PDF como CSV  o EXCEL
+Este directorio es donde se almacenan todos los archivos subidos al backend, tanto PDF como CSV  o EXCEL.
 
 :::caution
 Si nota que este directorio no se encuentra es porque se crea automáticamente, una vez que ejecuta la ruta para crear archivos, este directorio está ignorado en el  `.gitignore`
@@ -81,9 +81,8 @@ pip freeze < requirements.txt
 ```
 :::
 
-##
-src
-Se almacena todo el código fuente del proyecto.
+## src
+Aquí se almacena todo el código fuente del proyecto.
 ### Config
 En este directorio se almacenan las configuraciones del proyecto, por ejemplo las conexiones a la base de datos.
 

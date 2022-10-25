@@ -38,7 +38,7 @@ class ChapterOut(BaseModel):
 
 ## Creación
 :::caution
-Tome en cuenta que estos modelos heredan de la clase Base Model, por lo que al generar ustede querer generar un inicializador, deberá hacer uso del `super().__init__(**kwargs)`
+Tome en cuenta que estos modelos heredan de la clase Base Model, por lo que al usted querer generar un inicializador, deberá hacer uso del `super().__init__(**kwargs)`
 :::
 
 Como vemos aquí tenemos las clases que definen como serán los objetos que demos utilizar, como la clase `In` es la que nos mapea de *** Json *** a la entidad de la base de datos para su posterior inserción. O la `Out` que es la que nos mapea de la entidad al modelo correspondiente para retornarlos como  *** Json *** en las posibles rutas de este apartado.

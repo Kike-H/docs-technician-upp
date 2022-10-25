@@ -34,10 +34,10 @@ meta.create_all(engine)
 Lo primero que tenemos son todas las importacione necesarias del archivo.
 
 ## Creación
-A Partir de la clase tabla se genera una variable, primero y como string se pasa el nombre de la base de datos y después en esta clase se definen las columnas de las tablas así como los atributos de las mismas,también se le pasa el meta que es la información de la base de datos a la cual nos estamos conectando.
+A Partir de la clase tabla se genera una variable, esta suele llamarse como el nombre de la tabla. Primero y como un string se pasa el nombre de la tabla y después en esta clase se definen las columnas de las tablas así como los atributos de las mismas,también se le pasa el meta que es la información de conexión de la base de datos a la cual estamos accediendo.
 
 
-Por último tenemos el engine create all que nos genera toda la sentencia SQL para crear la tabla anteriormente descrita y lo ejecuta teniendo como resultado la siguiente tabla en nuestra base de datos:
+Por último tenemos el `meta.create_all(engine)` que nos genera toda la sentencia SQL para crear la tabla anteriormente descrita y lo ejecuta teniendo como resultado la siguiente tabla en nuestra base de datos:
 
 ## Tabla
 

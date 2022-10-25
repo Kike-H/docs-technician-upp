@@ -47,7 +47,30 @@ def eliminar(id: str):
 
 # * ---- BASIC CRUD
 ```
+## ¿Que es un decorador?
 
+Bien en palabras sencillas los decoradores en python, son funciones que envuelven a otra, esto con la intención de de ejecutar funciones que suelen repetirse dentro de otras, esta acción en python lo hacemos en base a la siguiente estructura:
+ 
+ ```python
+
+def funcion_envolvente(name: str):
+    print("Hello", name)
+
+
+ @funcion_envolvente("Kike")
+ def funcion():
+    print("Hello World!")
+
+
+ ```
+
+ Danos una salida como la siguiente:
+
+ ```bash
+Hello Kike 
+Hello World!
+ ```
+Por ende usamos los decoradores del framework `FastAP` para que este se encarga de recibir todos los response y request entre otros, y la estructura de los mismos y nosotros nos enfoquemos solo de usar estos métodos para aplicar la lógica de que harán nuestras rutas.
 
 
 
