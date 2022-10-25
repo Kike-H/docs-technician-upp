@@ -2,56 +2,19 @@
 sidebar_position: 2
 ---
 
-# Create a Document
+# Base de Datos
 
-Documents are **groups of pages** connected through:
+Estructura de las base de datos *** MySQL ***
+Como ya hemos mencionado se está utilizando una base de datos relacional llamada MySQL, la cual se almacena toda la información necesaria para el funcionamiento adecuado de este modulos, a continuación puede visualizar un diagrama E-R acerca de esta base de datos.
 
-- a **sidebar**
-- **previous/next navigation**
-- **versioning**
+## Diagrama Entidad Relación (E-R)
 
-## Create your first Doc
+:::info
+Cabe mencionar que las tablas se generan automáticamente a partir de los schemas de las base de datos, para saber más, consulte el apartado de schemas.
+:::
 
-Create a Markdown file at `docs/hello.md`:
+<iframe
+  src="https://dbdiagram.io/d/635179e74709410195a852ea"
+  />
 
-```md title="docs/hello.md"
-# Hello
 
-This is my **first Docusaurus document**!
-```
-
-A new document is now available at [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello).
-
-## Configure the Sidebar
-
-Docusaurus automatically **creates a sidebar** from the `docs` folder.
-
-Add metadata to customize the sidebar label and position:
-
-```md title="docs/hello.md" {1-4}
----
-sidebar_label: 'Hi!'
-sidebar_position: 3
----
-
-# Hello
-
-This is my **first Docusaurus document**!
-```
-
-It is also possible to create your sidebar explicitly in `sidebars.js`:
-
-```js title="sidebars.js"
-module.exports = {
-  tutorialSidebar: [
-    'intro',
-    // highlight-next-line
-    'hello',
-    {
-      type: 'category',
-      label: 'Tutorial',
-      items: ['tutorial-basics/create-a-document'],
-    },
-  ],
-};
-```
