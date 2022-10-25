@@ -2,145 +2,43 @@
 sidebar_position: 4
 ---
 
-# Markdown Features
+# Models
+Los modelos y los *** mappers ***
 
-Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
+Los modelos son los encargados de mapear la información obtenida de la base de datos, así como de mapearla para su procesamiento y posterior inserción a la base de datos.
 
-## Front Matter
+## Código
+```python
+from typing import List, Optional
+from pydantic import BaseModel
+from src.models.status import StatusModel
 
-Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/):
 
-```text title="my-doc.md"
-// highlight-start
----
-id: my-doc-id
-title: My document title
-description: My document description
-slug: /my-custom-url
----
-// highlight-end
+class ChapterBase(BaseModel):
+    idCapitulo: Optional[int]
 
-## Markdown heading
 
-Markdown text with [links](./hello.md)
+class ChapterIn(StatusModel, ChapterBase):
+    numero: int
+    nombre: str
+    tipoGasto: str
+    nombreGasto: str
+    descripcion: str
+
+
+class ChapterOut(BaseModel):
+    values: List[ChapterIn] = [ChapterIn(**example)]
+    num: int = 0
+
+    def __init__(self, values: List[ChapterIn], **kwargs):
+        super().__init__(**kwargs)
+        self.values = values
+        self.num = len(values)
 ```
 
-## Links
-
-Regular Markdown links are supported, using url paths or relative file paths.
-
-```md
-Let's see how to [Create a page](/create-a-page).
-```
-
-```md
-Let's see how to [Create a page](./create-a-page.md).
-```
-
-**Result:** Let's see how to [Create a page](./create-a-page.md).
-
-## Images
-
-Regular Markdown images are supported.
-
-You can use absolute paths to reference images in the static directory (`static/img/docusaurus.png`):
-
-```md
-![Docusaurus logo](/img/docusaurus.png)
-```
-
-![Docusaurus logo](/img/docusaurus.png)
-
-You can reference images relative to the current file as well, as shown in [the extra guides](../tutorial-extras/manage-docs-versions.md).
-
-## Code Blocks
-
-Markdown code blocks are supported with Syntax highlighting.
-
-    ```jsx title="src/components/HelloDocusaurus.js"
-    function HelloDocusaurus() {
-        return (
-            <h1>Hello, Docusaurus!</h1>
-        )
-    }
-    ```
-
-```jsx title="src/components/HelloDocusaurus.js"
-function HelloDocusaurus() {
-  return <h1>Hello, Docusaurus!</h1>;
-}
-```
-
-## Admonitions
-
-Docusaurus has a special syntax to create admonitions and callouts:
-
-    :::tip My tip
-
-    Use this awesome feature option
-
-    :::
-
-    :::danger Take care
-
-    This action is dangerous
-
-    :::
-
-:::tip My tip
-
-Use this awesome feature option
-
+## Creación
+:::caution
+Tome en cuenta que estos modelos heredan de la clase Base Model, por lo que al generar ustede querer generar un inicializador, deberá hacer uso del `super().__init__(**kwargs)`
 :::
 
-:::danger Take care
-
-This action is dangerous
-
-:::
-
-## MDX and React Components
-
-[MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
-
-```jsx
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`)
-    }}>
-    {children}
-  </span>
-);
-
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
-
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
-```
-
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`);
-    }}>
-    {children}
-  </span>
-);
-
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
-
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+Como vemos aquí tenemos las clases que definen como serán los objetos que demos utilizar, como la clase `In` es la que nos mapea de *** Json *** a la entidad de la base de datos para su posterior inserción. O la `Out` que es la que nos mapea de la entidad al modelo correspondiente para retornarlos como  *** Json *** en las posibles rutas de este apartado.
