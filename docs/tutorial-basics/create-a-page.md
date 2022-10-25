@@ -39,7 +39,9 @@ Aquí abajo verá un diagrama de árbol de la estructura del proyecto:
 ```
 
 ## exc.sh
-
+:::tip
+Si asi lo desea puede darle un alias al ejecutable, para poder ejecutarlo de una mejor manera.
+:::
 Este es el ejecutable creado, para ejecutar, la api, limpiar las tablas y ejecutar los test creados de la API.
 
 ### Dev
