@@ -6,7 +6,7 @@ sidebar_position: 2
 
 Las pruebas y el **script ejecutable**. 
 
-Si así lo desea una vez creado todos los scripts de pruebas unitarias, podrá ejecutarlos a través del script ejecutable, este se encarga de leer todos los archivos en la carpeta de pruebas y ejecutarlos uno por uno, para así ser más eficiente y productivo.
+Si así lo desea una vez creado todos los scripts de pruebas unitarias, podrá ejecutarlos a través del script ejecutable, este se encarga de leer todos los archivos en la carpeta de pruebas y ejecutarlos uno por uno, para así ser más eficiente y productivos.
 
 ```bash 
 ./exc.sh test
