@@ -78,9 +78,9 @@ Ahora como vemos estos decoradores aceptan varios parametros, primero encontramo
 
 
 ## Enrutador
-Bien para poder usar este decorador lo traemos de una clase llamada `APIRouter` y esta trae varias funciones decoradoras para poder hacer uso de ellas, que son las cuatro principales, de los verbos que ya mencionamos `GET`, `POST`, `PUT` y  `DELETE` todo esto a partir del objeto  generado de APIRouter.
+Bien para poder usar este decoradores lo traemos de una clase llamada `APIRouter`, el cual es un _Enrutador_ y esta trae varias funciones decoradoras para poder hacer uso de ellas, que son las cuatro principales, de los verbos que ya mencionamos `GET`, `POST`, `PUT` y  `DELETE` todo esto a partir del objeto  generado de APIRouter.
 
-> Ahora una vez genera tu enrutador no olvides agregarlo al app principal, que tendrá nuestro enrutador principal con un prefijo o prefix como verás a continuación.
+> Ahora una vez generado tu enrutador no olvides agregarlo al app principal, que tendrá nuestro enrutador principal con un prefijo o prefix como verás a continuación.
 
 `src/app.py`
 ```python
