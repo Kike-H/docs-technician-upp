@@ -71,7 +71,7 @@ def funcion_envolvente(name: str, callback):
 Hello Kike 
 Hello World!
  ```
-Por ende usamos los decoradores del framework `FastAPI` para que este se encarga de recibir todos los `response` y `request` entre otros, y la estructura de los mismos y nosotros nos enfoquemos solo de usar estos métodos para aplicar la lógica de que harán nuestras rutas.
+Por ende usamos los decoradores del framework `FastAPI` para que este se encarga de recibir todos los `response` y `request` entre otros y nosotros nos enfoquemos solo de usar estos métodos para aplicar la lógica de nuestras rutas.
 
 ### Decoradores en rutas 
 Ahora como vemos estos decoradores aceptan varios parametros, primero encontramos lo que es el path de la ruta que viene en formato string, un `response_model` que es el modelo con el que la ruta responderá en caso de éxito y de la misma manera con el `status_code`, también tenemos lo que son los `tags`, este ultimo mas que nada nos ayuda a organizar todas estas rutas en la documentación generada a partir de *** FastAPI ***, para saber mas de esto visita [`FastAPI/Metadata`](https://fastapi.tiangolo.com/tutorial/metadata/)
