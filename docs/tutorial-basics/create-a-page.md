@@ -17,6 +17,7 @@ Aquí abajo verá un diagrama de árbol de la estructura del proyecto:
 ├── exc.sh
 ├── files
 ├── requirements.txt
+├── .env
 ├── src
 │   ├── app.py
 │   ├── config
