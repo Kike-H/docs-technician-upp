@@ -82,7 +82,7 @@ def test_delete():
 
 ```
 ## Creación
-Como vemos se crea un cliente que pueda ejecutar estas rutas, se crean funciones de prueba para cada ruta en donde se decide que se enviará y como y que se espera como respuesta desde el status code, como respuesta json.
+Como vemos se crea un cliente que pueda ejecutar estas rutas, se crean funciones de prueba para cada ruta en donde se decide que se enviará y como y que se espera como respuesta desde el status code hasta la respuesta json.
 
 ## Ejecución
 Para ejecutar cualquier prueba de forma independiente puedes hacer lo siguiente:
