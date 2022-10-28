@@ -27,7 +27,7 @@ const config = {
     locales: ["en"],
   },
 
-  plugins: ["plugin-image-zoom"],
+
 
   presets: [
     [
@@ -43,18 +43,24 @@ const config = {
           editUrl:
             "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
+  ],
+
+  plugins: [
+    "plugin-image-zoom",
+    [
+      '@docusaurus/plugin-content-docs', {
+        id: 'frontend',
+        path: 'frontend',
+        routeBasePath: "frontend",
+        sidebarPath: require.resolve('./sidebars.js'),
+      }
+    ]
   ],
 
   themeConfig:
@@ -74,7 +80,13 @@ const config = {
             to: "/backend",
             label: "Backend",
           },
-          { to: "/blog", label: "Frontend", position: "left" },
+          {
+            type: "docsVersionDropdown",
+            docsPluginId: "frontend",
+            position: "left",
+            to: "/frontend",
+            label: "Frontend"
+          },
           {
             href: "https://kike-h.github.io/portfolio/",
             label: "GitHub",
