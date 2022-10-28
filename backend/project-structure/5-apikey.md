@@ -45,7 +45,7 @@ Una vez agregado nuestro usuario con su respectivo **rol **en la ruta `POST` de 
 ```
 
 
-Y de aquí podremos obtener nuestro token acceso para su posterior uso.
+Y de aquí podremos obtener nuestro token de acceso para su posterior uso.
 
 
 ## ¿Cómo usar el API KEY?
