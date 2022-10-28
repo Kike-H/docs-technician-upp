@@ -33,7 +33,9 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          path: "backend",
           sidebarPath: require.resolve('./sidebars.js'),
+
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -67,6 +69,7 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
+            to: "/backend",
             label: 'Backend',
           },
           {to: '/blog', label: 'Frontend', position: 'left'},
