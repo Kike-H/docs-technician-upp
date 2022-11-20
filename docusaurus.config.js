@@ -81,9 +81,10 @@ const config = {
             label: "Backend",
           },
           {
-            to: "/frontend/intro",
+            type: "docsVersionDropdown",
+            docsPluginId: "frontend",
+            to: "/frontend",
             label: "Frontend",
-            activeBaseRegex: `/frontend/`
           },
           {
             href: "https://kike-h.github.io/portfolio/",
