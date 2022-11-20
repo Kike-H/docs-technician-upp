@@ -81,7 +81,7 @@ const config = {
             label: "Backend",
           },
           {
-            type: "docsVersionDropdown",
+            type: "docsVersion",
             docsPluginId: "frontend",
             position: "left",
             to: "/frontend",
