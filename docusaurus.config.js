@@ -10,7 +10,7 @@ const config = {
   tagline: "Módulo del departamento de compras de la UPP",
   url: "https:/Kike-H.github.io",
   baseUrl: "/docs-technician-upp/",
-  onBrokenLinks: "ignore",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: 'img/favicon.ico',
   trailingSlash: true,
