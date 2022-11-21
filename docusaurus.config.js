@@ -1,18 +1,18 @@
-// @ts-nocheck
+// @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "UPP DOCS",
+  title: 'UPP DOCS',
   tagline: "Módulo del departamento de compras de la UPP",
-  url: "https:/Kike-H.github.io/docs-technician-upp",
+  url: "https:/Kike-H.github.io",
   baseUrl: "/docs-technician-upp/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -23,29 +23,26 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
-
-
 
   presets: [
     [
-      "classic",
+      'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           path: "backend",
-          sidebarPath: require.resolve("./sidebars.js"),
-
+          sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: false,
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
@@ -54,89 +51,88 @@ const config = {
   plugins: [
     "plugin-image-zoom",
     [
-      '@docusaurus/plugin-content-docs', {
-        id: 'frontend',
-        path: 'frontend',
+      "@docusaurus/plugin-content-docs", {
+        id: "frontend",
+        path: "frontend",
         routeBasePath: "frontend",
         sidebarPath: require.resolve('./sidebars.js'),
       }
-    ]
+    ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "",
+        title: '',
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: 'My Site Logo',
+          src: 'img/logo.svg',
         },
         items: [
           {
-            type: "doc",
-            docId: "intro",
-            position: "left",
+            type: 'doc',
+            docId: 'intro',
+            position: 'left',
             to: "/backend",
-            label: "Backend",
+            label: 'Backend',
           },
           {
-            type: "docsVersionDropdown",
+            type: "docsVersion",
             docsPluginId: "frontend",
-            to: "/frontend",
             label: "Frontend",
           },
           {
-            href: "https://kike-h.github.io/portfolio/",
-            label: "GitHub",
-            position: "right",
+            href: 'https://kike-h.github.io/portfolio/',
+            label: 'MyPage',
+            position: 'right',
           },
         ],
       },
       footer: {
-        style: "dark",
+        style: 'dark',
         links: [
           {
-            title: "Docs",
+            title: 'Docs',
             items: [
               {
-                label: "Tutorial",
-                to: "/docs/intro",
+                label: 'Tutorial',
+                to: '/docs/intro',
               },
             ],
           },
           {
-            title: "Community",
+            title: 'Community',
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
               },
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                label: 'Discord',
+                href: 'https://discordapp.com/invite/docusaurus',
               },
               {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                label: 'Twitter',
+                href: 'https://twitter.com/docusaurus',
               },
             ],
           },
           {
-            title: "More",
+            title: 'More',
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: 'Blog',
+                to: '/blog',
               },
               {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                label: 'GitHub',
+                href: 'https://github.com/facebook/docusaurus',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} UPP, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
