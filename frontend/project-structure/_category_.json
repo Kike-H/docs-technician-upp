@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "Aquí aprenderás todo acerca de la estructura del proyecto, desde la base de datos, los modelos esquemas, ficheros etc."
+    "description": "Aquí aprenderás todo acerca de la estructura del proyecto, desde los modulos de node, asi como la creacion de nuevas dependecias con react"
   }
 }
